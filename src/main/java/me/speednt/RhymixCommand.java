@@ -69,6 +69,17 @@ public class RhymixCommand implements CommandExecutor, TabCompleter {
                 player.sendMessage(ChatColor.GREEN + "Teleported Rhymix.");
                 break;
 
+            case "chat":
+
+                if (!RhymixNPC.exists()) {
+                    player.sendMessage(ChatColor.RED + "Rhymix isn't spawned.");
+                    return true;
+                }
+
+                RhymixNPC.chat();
+
+                break;
+
             default:
                 help(player);
                 break;
@@ -83,6 +94,7 @@ public class RhymixCommand implements CommandExecutor, TabCompleter {
         player.sendMessage(ChatColor.YELLOW + "/rhymix spawn");
         player.sendMessage(ChatColor.YELLOW + "/rhymix remove");
         player.sendMessage(ChatColor.YELLOW + "/rhymix tp");
+        player.sendMessage(ChatColor.YELLOW + "/rhymix chat");
     }
 
     @Override
@@ -98,6 +110,7 @@ public class RhymixCommand implements CommandExecutor, TabCompleter {
             list.add("spawn");
             list.add("remove");
             list.add("tp");
+            list.add("chat");
         }
 
         return list;
