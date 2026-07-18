@@ -1,0 +1,9 @@
+name: RhymixPlugin
+version: 1.0
+main: me.speednt.RhymixPlugin
+api-version: '26.1.2'
+
+commands:
+  rhymix:
+    description: Rhymix NPC command
+    usage: /rhymix
